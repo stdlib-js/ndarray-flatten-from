@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-10-03)
+## Unreleased (2025-11-12)
 
 <section class="features">
 
@@ -16,12 +16,23 @@
 
 <!-- /.features -->
 
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`83a01e7`](https://github.com/stdlib-js/stdlib/commit/83a01e723e9037a2c402c1e60b54bc678ef27078) - enforce mostly-safe casting
+
+</section>
+
+<!-- /.bug-fixes -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`83a01e7`](https://github.com/stdlib-js/stdlib/commit/83a01e723e9037a2c402c1e60b54bc678ef27078) - **fix:** enforce mostly-safe casting _(by Athan Reines)_
 -   [`9d84704`](https://github.com/stdlib-js/stdlib/commit/9d8470471bc66b3a98da174b72a3ab4f9302744f) - **feat:** add `ndarray/flatten-from` [(#8153)](https://github.com/stdlib-js/stdlib/pull/8153) _(by Muhammad Haris, Athan Reines)_
 
 </details>

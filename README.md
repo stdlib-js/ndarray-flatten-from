@@ -139,7 +139,7 @@ var y = flattenFrom( x, 0, {
 });
 // returns <ndarray>
 
-var dt = dtype( y );
+var dt = String( dtype( y ) );
 // returns 'float32'
 
 var arr = ndarray2array( y );

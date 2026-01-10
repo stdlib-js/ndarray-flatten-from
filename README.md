@@ -75,16 +75,12 @@ Returns a copy of an input [ndarray][@stdlib/ndarray/ctor] where all dimensions 
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
 
 var y = flattenFrom( x, 1 );
-// returns <ndarray>
-
-var arr = ndarray2array( y );
-// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ] ]
+// returns <ndarray>[ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ] ]
 ```
 
 The function accepts the following arguments:
@@ -110,7 +106,6 @@ By default, the input [ndarray][@stdlib/ndarray/ctor] is flattened in lexicograp
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
@@ -118,10 +113,7 @@ var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 var y = flattenFrom( x, 0, {
     'order': 'column-major'
 });
-// returns <ndarray>
-
-var arr = ndarray2array( y );
-// returns [ 1.0, 3.0, 5.0, 2.0, 4.0, 6.0 ]
+// returns <ndarray>[ 1.0, 3.0, 5.0, 2.0, 4.0, 6.0 ]
 ```
 
 By default, the output ndarray [data type][@stdlib/ndarray/dtypes] is inferred from the input [ndarray][@stdlib/ndarray/ctor]. To return an ndarray with a different [data type][@stdlib/ndarray/dtypes], specify the `dtype` option.
@@ -129,7 +121,6 @@ By default, the output ndarray [data type][@stdlib/ndarray/dtypes] is inferred f
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var dtype = require( '@stdlib/ndarray-dtype' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
@@ -137,13 +128,10 @@ var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 var y = flattenFrom( x, 0, {
     'dtype': 'float32'
 });
-// returns <ndarray>
+// returns <ndarray>[ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
 
 var dt = String( dtype( y ) );
 // returns 'float32'
-
-var arr = ndarray2array( y );
-// returns [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
 ```
 
 </section>
@@ -222,7 +210,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -248,8 +236,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 

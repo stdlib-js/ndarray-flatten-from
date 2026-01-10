@@ -41,38 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-flatten-from
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-flattenFrom = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var flattenFrom = require( 'path/to/vendor/umd/ndarray-flatten-from/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.flattenFrom;
-})();
-</script>
+var flattenFrom = require( '@stdlib/ndarray-flatten-from' );
 ```
 
 #### flattenFrom( x, dim\[, options] )
@@ -81,16 +75,12 @@ Returns a copy of an input [ndarray][@stdlib/ndarray/ctor] where all dimensions 
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
 
 var y = flattenFrom( x, 1 );
-// returns <ndarray>
-
-var arr = ndarray2array( y );
-// returns [ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ] ]
+// returns <ndarray>[ [ 1.0, 2.0 ], [ 3.0, 4.0 ], [ 5.0, 6.0 ] ]
 ```
 
 The function accepts the following arguments:
@@ -116,7 +106,6 @@ By default, the input [ndarray][@stdlib/ndarray/ctor] is flattened in lexicograp
 
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
@@ -124,10 +113,7 @@ var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 var y = flattenFrom( x, 0, {
     'order': 'column-major'
 });
-// returns <ndarray>
-
-var arr = ndarray2array( y );
-// returns [ 1.0, 3.0, 5.0, 2.0, 4.0, 6.0 ]
+// returns <ndarray>[ 1.0, 3.0, 5.0, 2.0, 4.0, 6.0 ]
 ```
 
 By default, the output ndarray [data type][@stdlib/ndarray/dtypes] is inferred from the input [ndarray][@stdlib/ndarray/ctor]. To return an ndarray with a different [data type][@stdlib/ndarray/dtypes], specify the `dtype` option.
@@ -135,7 +121,6 @@ By default, the output ndarray [data type][@stdlib/ndarray/dtypes] is inferred f
 ```javascript
 var array = require( '@stdlib/ndarray-array' );
 var dtype = require( '@stdlib/ndarray-dtype' );
-var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 // returns <ndarray>
@@ -143,13 +128,10 @@ var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
 var y = flattenFrom( x, 0, {
     'dtype': 'float32'
 });
-// returns <ndarray>
+// returns <ndarray>[ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
 
 var dt = String( dtype( y ) );
 // returns 'float32'
-
-var arr = ndarray2array( y );
-// returns [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ]
 ```
 
 </section>
@@ -172,16 +154,11 @@ var arr = ndarray2array( y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var array = require( '@stdlib/ndarray-array' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var flattenFrom = require( '@stdlib/ndarray-flatten-from' );
 
 var xbuf = discreteUniform( 12, -100, 100, {
     'dtype': 'generic'
@@ -195,11 +172,6 @@ console.log( ndarray2array( x ) );
 
 var y = flattenFrom( x, 1 );
 console.log( ndarray2array( y ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -238,7 +210,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
@@ -264,8 +236,8 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 -->
 
-[chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
-[chat-url]: https://app.gitter.im/#/room/#stdlib-js_stdlib:gitter.im
+[chat-image]: https://img.shields.io/badge/zulip-join_chat-brightgreen.svg
+[chat-url]: https://stdlib.zulipchat.com
 
 [stdlib]: https://github.com/stdlib-js/stdlib
 
@@ -284,11 +256,11 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-flatten-from/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/umd
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/umd
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders/tree/umd
+[@stdlib/ndarray/orders]: https://github.com/stdlib-js/ndarray-orders
 
 <!-- <related-links> -->
 

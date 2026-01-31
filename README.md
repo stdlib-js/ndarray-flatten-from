@@ -48,6 +48,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ndarray-flatten-from/tags). For example,
+
+```javascript
 import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@v0.1.0-deno/mod.js';
 ```
 
@@ -140,7 +145,7 @@ var dt = String( dtype( y ) );
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@deno/mod.js';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@deno/mod.js';
-import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@v0.1.0-deno/mod.js';
+import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@deno/mod.js';
 
 var xbuf = discreteUniform( 12, -100, 100, {
     'dtype': 'generic'

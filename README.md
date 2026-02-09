@@ -48,7 +48,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@esm/index.mjs';
+import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@v0.1.1-esm/index.mjs';
 ```
 
 #### flattenFrom( x, dim\[, options] )
@@ -145,7 +145,7 @@ var dt = String( dtype( y ) );
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
 import array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-array@esm/index.mjs';
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@esm/index.mjs';
+import flattenFrom from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-flatten-from@v0.1.1-esm/index.mjs';
 
 var xbuf = discreteUniform( 12, -100, 100, {
     'dtype': 'generic'
